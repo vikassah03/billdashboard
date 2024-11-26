@@ -97,7 +97,7 @@ export default function Invoice() {
   
 const printInvoice = () => {
   document.getElementById("closebtn").style.color = "white";
-  
+
   const style = document.createElement('style');
   style.type = 'text/css';
   style.media = 'print';
@@ -107,7 +107,13 @@ const printInvoice = () => {
     }
     body {
       -webkit-print-color-adjust: exact;
-      margin: 0;
+      margin-left: 200px;
+    }
+    .invoice-content {
+      width: auto; /* Set a fixed width for the content */
+      margin: auto; /* Center the content horizontally */
+      padding: 20px;
+      box-sizing: border-box;
     }
     header, footer {
       display: none;
@@ -119,13 +125,15 @@ const printInvoice = () => {
   setTimeout(() => {
     window.print();
     document.head.removeChild(style); // Clean up the style element after printing
-    
+
     // Set another timeout to refresh the page after 5 seconds
     setTimeout(() => {
       window.location.reload();
-    }, 5000);
+    }, 4000);
   }, 100);
 };
+
+
 
 
   return (
@@ -238,8 +246,8 @@ const printInvoice = () => {
           <p><strong>Client Name :</strong> {formData.clientName || "Q-Line Biotech Private Limited"}</p>
           {/* <p><strong>Client Address:</strong> {formData.clientAddress || "298-281,"}</p> */}
           <p><strong>Client address : {formData.clientAddress || ""}</strong></p> 
-          <p><strong>GST :</strong> {formData.gst || ""}%</p>
-          <p><strong>GST NO. :</strong> {formData.gstNO || "09AAFCP6782B1Z6"}</p>
+          {/* <p><strong>GST :</strong> {formData.gst || ""}%</p> */}
+          <p><strong>GST :</strong> {formData.gstNO || "09AAFCP6782B1Z6"}</p>
         </div>
       
         {/* R.O. No Section */}
