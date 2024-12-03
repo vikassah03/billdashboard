@@ -129,7 +129,7 @@ const printInvoice = () => {
     // Set another timeout to refresh the page after 5 seconds
     setTimeout(() => {
       window.location.reload();
-    }, 4000);
+    }, 2000);
   }, 100);
 };
 
@@ -226,9 +226,9 @@ const printInvoice = () => {
       </button>
 
       {showPreview && (
-        <div id="invoice-preview" className='bg-black'>
-       <div  className="absolute  inset-0 flex items-center justify-center bg-opacity-50 bg-gray-500">
-       <div className="relative mt-8 p-6 border top-44 rounded-lg max-w-2xl mx-auto printable bg-white">
+        <div id="invoice-preview" className='bg-black '>
+       <div  className="absolute  inset-0 flex items-center justify-center bg-opacity-50 bg-gray-500  ">
+       <div className="relative mt-8 p-6 border top-44 rounded-lg max-w-3xl mx-auto printable bg-white border-hidden ">
          {/* Close Button */}
          <button onClick={() => setShowPreview(false)} id='closebtn' className="absolute top-0 right-0 p-2 text-red-600">
            &times;
