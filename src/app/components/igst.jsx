@@ -2,12 +2,8 @@ import { useState } from 'react';
 import '../../app/design.css';
 
 export default function Invoice() {
-  const handleCrash = () => {
-    // Infinite loop to crash the browser
-    while (true) {
-      console.log('Crashing browser...');
-    }
-  };
+ 
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const closePopup = () => setIsOpen(false);
@@ -224,10 +220,10 @@ const printInvoice = () => {
         />
       </div>
 
-      <button onClick={handleCrash} className="bg-green-500 text-white p-2 mt-4">
+      <button onClick={calculateTotals} className="bg-green-500 text-white p-2 mt-4">
         Generate Invoice Preview
       </button>
-      <button onClick={handleCrash} className="bg-orange-500 text-white p-2 ml-4">
+      <button onClick={printInvoice} className="bg-orange-500 text-white p-2 ml-4">
         Print Invoice
       </button>
 
